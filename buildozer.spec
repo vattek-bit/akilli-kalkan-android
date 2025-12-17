@@ -7,7 +7,7 @@ title = AkilliKalkan
 package.name = akillikalkan
 
 # Paket domain (örnek)
-package.domain = org.tekin
+package.domain = org.elisa
 
 version = 0.1
 
@@ -38,7 +38,7 @@ log_level = 2
 android.permissions = INTERNET
 
 # Mimari (EN ÖNEMLİ KISIM)
-android.archs = arm64-v8a,armeabi-v7a
+android.archs = arm64-v8a
 
 # Build tipi
 android.debug = 1
