@@ -1,67 +1,67 @@
 [app]
 
-# Uygulama adƒ±
-title = AkilliKalkan
-
-# Paket adƒ± (k√º√ß√ºk harf, bo≈üluk yok)
+# ------------------------------
+# TEMEL UYGULAMA B›LG›LER›
+# ------------------------------
+title = Akilli Kalkan
 package.name = akillikalkan
+package.domain = org.akillikalkan
 
-# Paket domain (√∂rnek)
-package.domain = org.elisa
+version = 1.0
 
-version = 0.1
-
-# main.py dosyasƒ±
+# ------------------------------
+# PYTHON & K‹T‹PHANELER
+# ------------------------------
 source.dir = .
-source.include_exts = py,png,jpg,kv
+source.include_exts = py,kv,png,jpg
 
-# Ana dosya
-entrypoint = main.py
+requirements = python3,kivy,numpy==1.23.5
 
-# K√ºt√ºphaneler
-requirements = python3,kivy,numpy
-
-# Android s√ºr√ºm ayarlarƒ±
+# ------------------------------
+# ANDROID AYARLARI («OK ÷NEML›)
+# ------------------------------
+android.archs = arm64-v8a
 android.api = 33
 android.minapi = 21
+android.ndk = 25b
 
-# Ekran y√∂n√º
+android.permissions = INTERNET
+android.allow_backup = True
+
+# ------------------------------
+# G÷R‹N‹M & ORYANTASYON
+# ------------------------------
 orientation = portrait
+fullscreen = 0
 
-# Tam ekran
-fullscreen = 1
+# ------------------------------
+# BOOTSTRAP
+# ------------------------------
+bootstrap = sdl2
 
-# Log a√ßƒ±k (hata ayƒ±klamak i√ßin √∂nemli)
+# ------------------------------
+# LOG & HATA AYIKLAMA
+# ------------------------------
 log_level = 2
 
-# ƒ∞zinler
-android.permissions = INTERNET
+# ------------------------------
+# BUILD ARA«LARI
+# ------------------------------
+p4a.branch = master
+p4a.bootstrap = sdl2
 
-# Mimari (EN √ñNEMLƒ∞ KISIM)
-android.archs = arm64-v8a
-
-# Build tipi
-android.debug = 1
-
-# Java ayarƒ±
+# ------------------------------
+# ANDROID GRADLE
+# ------------------------------
+android.gradle_dependencies =
 android.enable_androidx = True
 
-# SDK & NDK otomatik indirilsin
-android.accept_sdk_license = True
+# ------------------------------
+# ›KON (›STE–E BA–LI)
+# ------------------------------
+# icon.filename = icon.png
 
-# Temiz build (hata azaltƒ±r)
-android.clean_build = True
-
-
-[buildozer]
-
-# Buildozer s√ºr√ºm√º
-log_level = 2
-
-# Android SDK/NDK yolu (Actions i√ßin bo≈ü kalmalƒ±)
-android.sdk_path =
-android.ndk_path =
-android.ant_path =
-
-# Cache kullanma (ilk build i√ßin daha g√ºvenli)
+# ------------------------------
+# D›–ER
+# ------------------------------
 warn_on_root = 1
