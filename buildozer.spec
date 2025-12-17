@@ -4,10 +4,10 @@ title = AkilliKalkan
 package.name = akillikalkan
 package.domain = org.akillikalkan
 
-version = 1.0
+version = 0.1
 
 source.dir = .
-source.include_exts = py
+source.include_exts = py,kv
 
 requirements = python3,kivy,numpy==1.23.5
 
