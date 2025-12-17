@@ -27,16 +27,22 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Android packages
+      - name: Install Android SDK packages (AIDL FIX)
         run: |
           sdkmanager --licenses <<< "y"
           sdkmanager \
             "platform-tools" \
             "platforms;android-33" \
-            "build-tools;33.0.2" \
+            "build-tools;33.0.0" \
+            "build-tools;34.0.0" \
             "ndk;25.2.9519653"
 
-      - name: Install system deps
+      - name: Export AIDL to PATH
+        run: |
+          echo "$ANDROID_SDK_ROOT/build-tools/33.0.0" >> $GITHUB_PATH
+          echo "$ANDROID_SDK_ROOT/build-tools/34.0.0" >> $GITHUB_PATH
+
+      - name: Install system dependencies
         run: |
           sudo apt update
           sudo apt install -y \
@@ -47,14 +53,10 @@ jobs:
           pip install --upgrade pip
           pip install buildozer cython==0.29.36
 
-      # 🔥 EN KRİTİK ADIM
       - name: Remove broken buildozer cache
         run: rm -rf .buildozer
 
       - name: Build APK
-        env:
-          ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
-          ANDROID_SDK_ROOT: ${{ env.ANDROID_SDK_ROOT }}
         run: |
           buildozer -v android debug
 
