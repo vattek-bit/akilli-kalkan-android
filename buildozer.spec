@@ -9,6 +9,8 @@ package.name = akillikalkan
 # Paket domain (örnek)
 package.domain = org.tekin
 
+version = 0.1
+
 # main.py dosyası
 source.dir = .
 source.include_exts = py,png,jpg,kv
