@@ -1,1 +1,0 @@
-# akilli-kalkan-android
